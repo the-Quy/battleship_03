@@ -1,0 +1,23 @@
+@import "./variables.scss";
+
+.banner {
+  background-color: burlywood;
+  height: 200px;
+}
+
+.row {
+  height: 700px;
+}
+
+.col-left {
+  background-color: rgb(235, 169, 83);
+}
+.col-mid {
+  display: flex;
+  justify-content: center;
+
+  background-color: rgb(148, 155, 46);
+}
+.col-right {
+  background-color: rgb(46, 155, 146);
+}

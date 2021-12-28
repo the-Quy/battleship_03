@@ -1,0 +1,23 @@
+@import "./variables.scss";
+
+.board {
+  background-color: cornflowerblue;
+
+  display: grid;
+  grid-template-columns: repeat(10, calc($boardSize/10));
+  grid-template-rows: repeat(10, calc($boardSize/10));
+
+  height: $boardSize;
+  width: $boardSize;
+}
+
+.eachTile {
+  background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+
+.tileBg {
+  // background-color: crimson;
+  height:calc($boardSize/10);
+  width: calc($boardSize/10);
+ }
