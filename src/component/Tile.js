@@ -4,8 +4,10 @@ import "../stylesheet/Tile.scss";
 
 export default function Tile() {
   const [ship, getShip] = useState("");
+  // const [length, getShipLength] = useState("");
 
   let onDrop = (item) => {
+    console.log("hello!")
     getShip(item.sign);
   };
 

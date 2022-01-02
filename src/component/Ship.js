@@ -1,10 +1,10 @@
 import React from "react";
-import { useDrag} from "react-dnd";
+import { useDrag } from "react-dnd";
 
 export default function Ship({}) {
   const [{ opacity }, dragRef] = useDrag(() => ({
     type: "ship",
-    item: { sign: "Quy" },
+    item: { sign: "sign", length: 3 },
     collect: (monitor) => ({ opacity: monitor.isDragging() ? 0.7 : 1 }),
   }));
 

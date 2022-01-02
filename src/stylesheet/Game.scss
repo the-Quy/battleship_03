@@ -1,6 +1,13 @@
 @import "./variables.scss";
 
 .board {
+  // vertical center
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
   background-color: cornflowerblue;
 
   display: grid;
@@ -15,9 +22,8 @@
   background-image: linear-gradient(to bottom right, red, yellow);
 }
 
-
 .tileBg {
   // background-color: crimson;
-  height:calc($boardSize/10);
+  height: calc($boardSize/10);
   width: calc($boardSize/10);
- }
+}
