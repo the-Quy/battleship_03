@@ -8,3 +8,12 @@
   width: calc($boardSize/10);
   background-image: $tileColor;
 }
+
+.tileOpp {
+  display: flex; // center the x
+  align-items: center; // center the x
+  justify-content: center; // center the x
+  height: calc($boardSize/10);
+  width: calc($boardSize/10);
+  background-image: $tileColorOpp;
+}

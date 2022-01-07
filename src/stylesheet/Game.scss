@@ -18,10 +18,6 @@
   width: $boardSize;
 }
 
-.eachTile {
-  background-image: linear-gradient(to bottom right, red, yellow);
-}
-
 .tileBg {
   // background-color: crimson;
   height: calc($boardSize/10);

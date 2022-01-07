@@ -9,7 +9,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 
 import Game from "./Game";
+import GameOpp from "./GameOpp";
 import Ship from "./Ship";
+import leTitre from "../image/battleship/titre_02.svg";
+import txt_sesPieces from "../image/battleship/txt_sesPieces_01.svg";
+import txt_mesPieces from "../image/battleship/txt_mesPieces_01.svg";
+import txt_mesTrucs from "../image/battleship/txt_mesTrucs_01.svg";
+
 
 function Login() {
   return (
@@ -22,25 +28,47 @@ function Login() {
 function Battleship() {
   return (
     <>
+      <div className="banner">
+        <img src={leTitre} alt="title"></img>
+      </div>
       <DndProvider backend={HTML5Backend}>
         <Container fluid className="">
           <Row className="row">
             <Col xs={2} className="col-left">
-              <Ship length={2} />
-              <Ship />
-              <Ship />
+              <div> <img src={txt_mesTrucs} alt="txt_sesPieces"></img></div>
+              <div className="shipContainer">
+                <div>
+                  <Ship length={2} bateauImg="../image/board/cruiser_01.svg"/>
+                </div>
+                <div>
+                  <Ship />
+                </div>
+                <div>
+                  <Ship />
+                </div>
+              </div>
             </Col>
 
-            <Col xs={9} className="col-mid">
-              <Game />
+            <Col xs={5} className="col-mid">
+              <div className="txt_mesPieces_align">
+                <img src={txt_mesPieces} alt="txt_sesPieces"></img>
+              </div>
+              <div className="col-mid-content">
+                <Game />
+              </div>
             </Col>
 
-            <Col xs={1} className="col-right"></Col>
+            <Col xs={5} className="col-mid">
+              <div className="">
+                <img src={txt_sesPieces} alt="txt_sesPieces"></img>
+              </div>
+              <div className="col-mid-content">
+                <GameOpp />
+              </div>
+            </Col>
           </Row>
         </Container>
       </DndProvider>
-      <div className="banner">Banner</div>
-      <div></div>
     </>
   );
 }
@@ -71,30 +99,3 @@ function ReactRouter() {
 }
 
 export default ReactRouter;
-
-// function App() {
-//   return (
-//     <>
-//       <div className="banner">Banner</div>
-//       <DndProvider backend={HTML5Backend}>
-//         <Container fluid className="">
-//           <Row className="row">
-//             <Col xs={3} className="col-left">
-//               <Ship length={2}/>
-//               <Ship />
-//               <Ship />
-//             </Col>
-
-//             <Col xs={6} className="col-mid">
-//               <Game />
-//             </Col>
-
-//             <Col xs={3} className="col-right"></Col>
-//           </Row>
-//         </Container>
-//       </DndProvider>
-//     </>
-//   );
-// }
-
-// export default App;

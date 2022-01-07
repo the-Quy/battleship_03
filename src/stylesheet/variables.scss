@@ -1,2 +1,9 @@
-$boardSize: 600px;
-$tileColor: linear-gradient(to bottom right, red, yellow);
+$bannerHeight: 100px;
+
+$boardSize: 500px;
+$tileColor: linear-gradient(to bottom right, rgb(175, 188, 73), yellow);
+$tileColorOpp: linear-gradient(
+  to bottom right,
+  rgb(207, 89, 50),
+  rgb(0, 157, 255)
+);

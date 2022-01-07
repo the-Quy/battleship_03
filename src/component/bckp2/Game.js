@@ -1,32 +1,25 @@
 import React, { useState } from "react";
 import "../stylesheet/Game.scss";
+
 import Tile from "./Tile";
 
 let size = 10;
 
 export default function Game() {
-  
   const [etatGrille, fonctionChangementState] = useState(
     Array(size * size).fill(null)
   ); //-----> dragdrop
   const DropItem = (position, item, valeursGrille) => {
+   
     console.log("premiere ligne");
     let stateTemp = valeursGrille.slice(0);
-    stateTemp[position] = item.sign;
+    stateTemp[position] = item.bateauImg;
     console.log("YO!");
     fonctionChangementState(stateTemp);
   }; //-----> dragdrop
 
-  function fabriqueTile(index, callBack) {
-    return (
-      <Tile
-        // id={index} //-----> dragdrop
-        // position={index}
-        onDrop={callBack}
-        // color={etatGrille[index]}
-        valeursGrille={etatGrille} //-----> dragdrop
-      />
-    );
+  function fabriqueTile() {
+    return <Tile />;
   }
 
   let arraySquare = [];
@@ -44,8 +37,9 @@ export default function Game() {
     }
     const row = <div>{ligneSquare}</div>;
     arraySquare.push(row);
+    
   }
-
+  console.log(arraySquare)
   return (
     <>
       <div className="board">{arraySquare}</div>
