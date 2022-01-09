@@ -1,7 +1,7 @@
 export default function Accueil() {
   return (
     <div>
-      <h1>LOGIN!</h1>
+      <h1>Accueil</h1>
     </div>
   );
 }

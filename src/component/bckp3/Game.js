@@ -13,7 +13,7 @@ export default function Game() {
    
     console.log("premiere ligne");
     let stateTemp = valeursGrille.slice(0);
-    stateTemp[position] = item.sign;
+    stateTemp[position] = item.bateauImg;
     console.log("YO!");
     fonctionChangementState(stateTemp);
   }; //-----> dragdrop

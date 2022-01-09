@@ -3,12 +3,14 @@ import { useDrop } from "react-dnd";
 import "../stylesheet/Tile.scss";
 
 export default function Tile() {
-  const [ship, getShip] = useState("");
+  const [ship, getShip] = useState({ text: "", image: "" });
   // const [length, getShipLength] = useState("");
 
   let onDrop = (item) => {
-    console.log("hello!")
-    getShip(item.sign);
+    console.log(item);
+
+    getShip({ text: item.sign, image: item.bateauImg });
+    // getShip((item.sign, item.bateauImg));
   };
 
   const [{ hover }, drop] = useDrop(
@@ -24,8 +26,8 @@ export default function Tile() {
 
   return (
     <>
-      <div className="tile" ref={drop} >
-        <span>{ship}</span>
+      <div className="tile" ref={drop}>
+      <img src={ship.image}></img>
       </div>
     </>
   );

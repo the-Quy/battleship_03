@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../stylesheet/Game.scss";
 
+
+
 import Tile from "./Tile";
 
 let size = 10;
