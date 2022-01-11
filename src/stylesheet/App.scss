@@ -1,18 +1,21 @@
 @import "./variables.scss";
 
-.banner {
-  // background-color: burlywood;
+.banner_container {
   height: $bannerHeight;
 }
 
-.row {
-  height: 1000px;
+.battleship_title {
+  display: flex;
+  justify-content: center;
+}
+
+.game_row {
+  height: $boardSize + $bannerHeight + $footerGap;
 }
 
 .col-left {
   // vertical center
   height: 100%;
-
 
   display: flex;
   justify-content: center;
@@ -39,6 +42,12 @@
 }
 
 .shipContainer {
-  margin-top: 100px;
+  margin-top: 10px;
+}
 
+.txt_mesCoups {
+  padding-right: $boardTitlePush;
+}
+.txt_sesCoups {
+  padding-left: $boardTitlePush;
 }

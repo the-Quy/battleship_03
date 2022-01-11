@@ -1,6 +1,6 @@
 $bannerHeight: 100px;
-
-$boardSize: 500px;
+$boardTitlePush: 30px;
+$boardSize: 460px;
 $tileColor: linear-gradient(to bottom right, rgb(175, 188, 73), yellow);
 $tileColorOpp: linear-gradient(
   to bottom right,
@@ -8,5 +8,6 @@ $tileColorOpp: linear-gradient(
   rgb(0, 157, 255)
 );
 
+$footerGap: 10px;
 $tileBorder: 1px solid rgba(0, 0, 0, 0);
-$tileBorderOpp: 1px solid rgba(255, 0, 0, 0.0);
+$tileBorderOpp: 1px solid rgba(255, 0, 0, 0);

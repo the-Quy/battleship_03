@@ -8,13 +8,10 @@ import { DndProvider } from "react-dnd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 
-import Game from "./component/Game";
-import GameOpp from "./component/GameOpp";
-import Ship from "./component/Ship";
 import leTitre from "./image/battleship/titre_02.svg";
-import txt_sesPieces from "./image/battleship/txt_sesPieces_01.svg";
-import txt_mesPieces from "./image/battleship/txt_mesPieces_01.svg";
-import txt_mesTrucs from "./image/battleship/txt_mesTrucs_01.svg";
+import accueil from "./image/battleship/txt_accueil_01.svg";
+import inscrire from "./image/battleship/txt_inscrire_01.svg";
+import moi from "./image/battleship/txt_moi_01.svg";
 
 import Login from "./page/Login.js";
 import APropos from "./page/APropos.js";
@@ -25,15 +22,26 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="banner">
-          <img src={leTitre} alt="title"></img>
+        <div className="banner battleship_title">
+          <a href="/battleship">
+            <img src={leTitre} alt="title"></img>
+          </a>
+        </div>
+        <div className=" battleship_title">
+          &nbsp;
+          <a href="/">
+            <img src={accueil} alt="accueil"></img>
+          </a>
+          &nbsp;
+          <a href="/login">
+            <img src={inscrire} alt="inscrire"></img>
+          </a>
+          &nbsp;
+          <a href="/apropos">
+            <img src={moi} alt="moi"></img>
+          </a>
         </div>
 
-        <a href="/">accueil</a>
-        <span>&nbsp;&nbsp;</span>
-        <a href="/login">Login</a> <span>&nbsp;&nbsp;</span>
-        <a href="/battleship">battleship</a><span>&nbsp;&nbsp;</span>
-        <a href="/apropos">À propos</a>
         <Routes>
           <Route path="/" element={<Accueil />}></Route>
           <Route path="/login" element={<Login />}></Route>

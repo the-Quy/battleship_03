@@ -23,36 +23,48 @@ import bateau1 from "../image/battleship/bateau1.svg";
 export default function Battleship() {
   return (
     <>
-      <div></div>
       <DndProvider backend={HTML5Backend}>
         <Container fluid className="">
-          <Row className="row">
-            <Col xs={2} className="col-left">
-              <div className="shipContainer">
-                <img src={txt_mesTrucs} alt="txt_sesPieces"></img>
-                <Ship length={2} bateauImg={bateau5} preview={bateau5} />
-                <Ship length={2} bateauImg={bateau4} preview={bateau4} />
-                <Ship length={2} bateauImg={bateau3} preview={bateau3} />
-                <Ship length={2} bateauImg={bateau2} preview={bateau2} />
-                <Ship length={2} bateauImg={bateau1} preview={bateau1} />
-              </div>
-            </Col>
-            <Col xs={5} className="col-mid">
-              <div className="txt_mesPieces_align">
-                <img src={txt_mesPieces} alt="txt_sesPieces"></img>
+          <Row className="game_row">
+            <Col lg={6} className="col-mid">
+              <div className="txt_mesPieces_align txt_mesCoups">
+                <img src={txt_mesPieces} alt="txt_sesPieces "></img>
               </div>
               <div className="col-mid-content">
                 <div className="boardArt">
                   <Game />
                 </div>
               </div>
+              <Row>
+                <Col xd={6}>
+                  <div className="col-mid-content ">
+                    <img src={txt_mesTrucs} alt="txt_sesPieces"></img>
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <Row>
+                  <Col lg={1} md={0}></Col>
+                  <Col lg={12} md={12} className="col-left">
+                    <div className="shipContainer">
+                      <Ship length={2} bateauImg={bateau5} preview={bateau5} />
+                      <Ship length={2} bateauImg={bateau2} preview={bateau2} />
+                      <Ship length={2} bateauImg={bateau4} preview={bateau4} />
+                      <Ship length={2} bateauImg={bateau1} preview={bateau1} />
+                      <Ship length={2} bateauImg={bateau3} preview={bateau3} />
+                    </div>
+                  </Col>
+                  <Col lg={1} md={0}></Col>
+                </Row>
+                <Col xs={6}></Col>
+              </Row>
             </Col>
-            <Col xs={5} className="col-mid">
-              <div className="">
+            <Col lg={6} className="col-mid">
+              <div className="txt_sesCoups">
                 <img src={txt_sesPieces} alt="txt_sesPieces"></img>
               </div>
               <div className="col-mid-content">
-              <div className="boardOppArt">
+                <div className="boardOppArt">
                   <GameOpp />
                 </div>
               </div>

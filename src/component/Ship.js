@@ -13,10 +13,10 @@ export default function Ship({bateauImg, preview}) {
   }),[bateauImg]);
 
   return (
-    <div ref={dragRef} style={{ opacity }}>
-      <span><img src={preview}></img> </span>
-      <br></br><br/>
-    </div>
+    <span ref={dragRef} style={{ opacity }}>
+    <span>&nbsp;&nbsp;</span> <img src={preview}></img> 
+   
+    </span>
     
   );
 }

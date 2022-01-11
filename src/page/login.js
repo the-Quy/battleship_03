@@ -1,7 +1,9 @@
+import "../stylesheet/login.scss";
+
 export default function Login() {
   return (
-    <div>
-      <h1>login</h1>
+    <div className="myfonts">
+      <h1>abclogin</h1>
       <input></input>
     </div>
   );
