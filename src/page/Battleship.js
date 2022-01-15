@@ -1,5 +1,6 @@
 import React from "react";
 import "../stylesheet/App.scss";
+import "../stylesheet/animation.scss"
 
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { DndProvider } from "react-dnd";
@@ -47,8 +48,8 @@ export default function Battleship() {
                   <Col lg={1} md={0}></Col>
                   <Col lg={12} md={12} className="col-left">
                     <div className="shipContainer">
-                      <Ship length={2} bateauImg={bateau5} preview={bateau5} />
-                      <Ship length={2} bateauImg={bateau2} preview={bateau2} />
+                      <Ship length={5} nom={"carrier"} orientation={true} bateauImg={bateau5} preview={bateau5} />
+                      <Ship length={2} bateauImg={bateau2} preview={bateau2}  />
                       <Ship length={2} bateauImg={bateau4} preview={bateau4} />
                       <Ship length={2} bateauImg={bateau1} preview={bateau1} />
                       <Ship length={2} bateauImg={bateau3} preview={bateau3} />

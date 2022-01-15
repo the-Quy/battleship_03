@@ -14,7 +14,8 @@ export default function GameOpp() {
 
   function onClickTile(index) {
     let maCopie = allValues.slice();
-    console.log(maCopie);
+  
+    // console.log(maCopie);
     maCopie[index] = nextSymbole;
     setValues(maCopie);
   } //-----> tic tac toe

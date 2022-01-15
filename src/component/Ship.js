@@ -4,11 +4,10 @@ import { useDrag } from "react-dnd";
 
 
 
-export default function Ship({bateauImg, preview}) {
+export default function Ship({bateauImg, preview, nom}) {
   const [{ opacity }, dragRef] = useDrag(() => ({
     type: "ship",
-    item: { sign: "aaaa", bateauImg },
-    // item: { sign: <img src="..."></img>, length: 3 },
+    item: { nom, bateauImg },
     collect: (monitor) => ({ opacity: monitor.isDragging() ? 0.7 : 1 }),
   }),[bateauImg]);
 

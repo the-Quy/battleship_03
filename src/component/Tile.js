@@ -4,13 +4,14 @@ import "../stylesheet/Tile.scss";
 
 export default function Tile() {
   const [ship, getShip] = useState({ text: "", image: "" });
-  // const [length, getShipLength] = useState("");
+
 
   let onDrop = (item) => {
-    console.log(item);
+    // console.log("mon item")
+    // console.log(item);
 
-    getShip({ text: item.sign, image: item.bateauImg });
-    // getShip((item.sign, item.bateauImg));
+    getShip({ text: item.nom, image: item.bateauImg });
+
   };
 
   const [{ hover }, drop] = useDrop(

@@ -11,12 +11,14 @@ export default function Game() {
   const [etatGrille, fonctionChangementState] = useState(
     Array(size * size).fill(null)
   ); //-----> dragdrop
-  const DropItem = (position, item, valeursGrille) => {
+  const DropItem = (position, item, valeursGrille, nom) => {
    
-    console.log("premiere ligne");
+
+
     let stateTemp = valeursGrille.slice(0);
-    stateTemp[position] = item.sign;
-    console.log("YO!");
+    stateTemp[position] = item.nom;
+    // console.log("valeursGrille");
+    // console.log(valeursGrille);
     fonctionChangementState(stateTemp);
   }; //-----> dragdrop
 

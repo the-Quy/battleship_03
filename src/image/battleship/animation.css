@@ -1,0 +1,25 @@
+
+#fire1 {
+
+  animation: gun 4s ease-out infinite;
+  transform-origin: bottom right;
+  transform-box: fill-box;
+}
+@keyframes gun {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  2% {
+    transform: rotateZ(60deg);
+  }
+  3% {
+    transform: rotateZ(50deg);
+  }
+
+  22% {
+    transform: rotateZ(40deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+}
