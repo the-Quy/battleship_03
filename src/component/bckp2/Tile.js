@@ -1,31 +1,40 @@
 import React, { useState } from "react";
-import { useDrop } from "react-dnd";
+import { useDrop} from "react-dnd";
 import "../stylesheet/Tile.scss";
 
-export default function Tile({bateauImg}) {
-  const [ship, getShip] = useState("");
-  // const [length, getShipLength] = useState("");
+export default function Tile({ position, onDrop, grille, bateauImg }) {
+  const [ship, getShip] = useState({ text: "", image: "" });
 
-  let onDrop = (item) => {
-    console.log("hello!")
-    getShip(item.sign);
+  onDrop = (item) => {
+    // console.log("mon item")
+    // console.log(item);
+    getShip({ text: item.nom, image: item.preview });
   };
 
-  const [{ hover }, drop] = useDrop(
+  const [{ isOver }, drop] = useDrop(
     () => ({
       accept: "ship",
-      drop: (item) => onDrop(item),
+      drop: (item) => onDrop(item, position, grille),
       collect: (monitor) => ({
-        hover: !!monitor.isOver(),
+        isOver:  !!monitor.isOver(),
+        canDrop: !!monitor.canDrop(),
       }),
     }),
-    []
+    [grille]
   );
 
   return (
     <>
-      <div className="tile" style={{backgroundImage: hover ? "url(../image/board/test5.svg)" : bateauImg}} ref={drop} >
-        <span>{ship}</span>
+      <div
+        className="tile"
+        id={position}
+        ref={drop}
+        style={{
+          backgroundImage: isOver ? "url(../image/board/hover.jpg)" : bateauImg,
+        }}
+      >
+        <img src={ship.image} alt="ship preview"></img>
+        {ship.text}
       </div>
     </>
   );

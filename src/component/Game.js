@@ -10,21 +10,20 @@ let size = 10;
 export default function Game() {
   const [etatGrille, fonctionChangementState] = useState(
     Array(size * size).fill(null)
-  ); //-----> dragdrop
-  const DropItem = (position, item, valeursGrille, nom) => {
+  ); 
+  const DropItem = (position, item, grille) => {
    
 
 
-    let stateTemp = valeursGrille.slice(0);
+    let stateTemp = grille.slice(0);
     stateTemp[position] = item.nom;
-    // console.log("valeursGrille");
-    // console.log(valeursGrille);
+    console.log("grille");
+    // console.log(etatGrille);
+    console.log(stateTemp);
     fonctionChangementState(stateTemp);
-  }; //-----> dragdrop
+  }; 
 
-  function fabriqueTile() {
-    return <Tile />;
-  }
+
 
   let arraySquare = [];
   for (let y = 0; y < size; y++) {
@@ -33,9 +32,7 @@ export default function Game() {
       let id = x + y * size;
       ligneSquare.push(
         <div className="tileBg">
-          {fabriqueTile([id], (id, item, valeursGrille) =>
-            DropItem(id, item, valeursGrille)
-          )}
+          <Tile key={id} position={id} onDrop={DropItem} bateauImg={etatGrille[id]} grille={etatGrille} />
         </div>
       );
     }

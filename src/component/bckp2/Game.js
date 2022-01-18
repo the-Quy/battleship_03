@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../stylesheet/Game.scss";
 
+
+
 import Tile from "./Tile";
 
 let size = 10;
@@ -8,19 +10,20 @@ let size = 10;
 export default function Game() {
   const [etatGrille, fonctionChangementState] = useState(
     Array(size * size).fill(null)
-  ); //-----> dragdrop
-  const DropItem = (position, item, valeursGrille) => {
+  ); 
+  const DropItem = (position, item, grille) => {
    
-    console.log("premiere ligne");
-    let stateTemp = valeursGrille.slice(0);
-    stateTemp[position] = item.bateauImg;
-    console.log("YO!");
-    fonctionChangementState(stateTemp);
-  }; //-----> dragdrop
 
-  function fabriqueTile() {
-    return <Tile />;
-  }
+
+    let stateTemp = grille.slice(0);
+    stateTemp[position] = item.nom;
+    console.log("grille");
+    // console.log(etatGrille);
+    console.log(stateTemp);
+    fonctionChangementState(stateTemp);
+  }; 
+
+
 
   let arraySquare = [];
   for (let y = 0; y < size; y++) {
@@ -29,9 +32,7 @@ export default function Game() {
       let id = x + y * size;
       ligneSquare.push(
         <div className="tileBg">
-          {fabriqueTile([id], (id, item, valeursGrille) =>
-            DropItem(id, item, valeursGrille)
-          )}
+          <Tile key={id} position={id} onDrop={DropItem} grille={etatGrille}/>
         </div>
       );
     }

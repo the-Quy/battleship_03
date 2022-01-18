@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../stylesheet/Game.scss";
 
+
+
 import Tile from "./Tile";
 
 let size = 10;
@@ -11,10 +13,13 @@ export default function Game() {
   ); //-----> dragdrop
   const DropItem = (position, item, valeursGrille) => {
    
-    console.log("premiere ligne");
+
+
     let stateTemp = valeursGrille.slice(0);
-    stateTemp[position] = item.bateauImg;
-    console.log("YO!");
+    stateTemp[position] = item.nom;
+    console.log("valeursGrille");
+    // console.log(valeursGrille);
+    console.log(stateTemp);
     fonctionChangementState(stateTemp);
   }; //-----> dragdrop
 

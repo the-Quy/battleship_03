@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import { useDrop } from "react-dnd";
 import "../stylesheet/Tile.scss";
 
-export default function Tile({bateauImg}) {
-  const [ship, getShip] = useState("");
-  // const [length, getShipLength] = useState("");
+export default function Tile(id) {
+  const [ship, getShip] = useState({ text: "", image: "" });
+
 
   let onDrop = (item) => {
-    console.log("hello!")
-    getShip(item.sign);
+    
+    console.log("mon item")
+    console.log(item);
+
+    getShip({ text: item.nom, image: item.bateauImg });
+
   };
 
   const [{ hover }, drop] = useDrop(
@@ -24,8 +28,8 @@ export default function Tile({bateauImg}) {
 
   return (
     <>
-      <div className="tile" style={{backgroundImage: hover ? "url(../image/board/test5.svg)" : bateauImg}} ref={drop} >
-        <span>{ship}</span>
+      <div className="tile" id={id} ref={drop}>
+      <img src={ship.image}></img>{ship.text}
       </div>
     </>
   );

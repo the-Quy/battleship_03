@@ -54,7 +54,7 @@ export default function Login() {
         ></input>
       </div>
 
-      <button onClick={() => loginClick()}> envoyer</button>
+      <button style={{border:"none"}} onClick={() => loginClick()}> &#62;envoyer</button>
     </div>
   );
 }
